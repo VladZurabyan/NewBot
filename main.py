@@ -10,7 +10,7 @@ from telegram.ext import (
     ContextTypes,
 )
 
-TOKEN = os.getenv("TOKEN")  # Задай TOKEN через переменную окружения
+TOKEN = 8024354255:AAGQ-o2bmrYlrmVF3-Bdh4wk1GrfrIhpmGM  # Задай TOKEN через переменную окружения
 
 # Команда /start
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
