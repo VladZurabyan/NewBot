@@ -1,5 +1,6 @@
 import os
 import asyncio
+from flask import Flask
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import (
     ApplicationBuilder,
@@ -11,6 +12,16 @@ from telegram.ext import (
 )
 
 TOKEN = os.getenv("TOKEN")  # Задай TOKEN через переменную окружения
+
+app = Flask(__name__)
+
+@app.route("/ping")
+def ping():
+    return "pong", 200
+
+def run_flask():
+    app.run(host="0.0.0.0", port=3000)  # Порт можно любой, кроме $PORT от Render
+
 
 # Команда /start
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
